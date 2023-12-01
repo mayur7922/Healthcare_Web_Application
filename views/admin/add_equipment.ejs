@@ -1,0 +1,42 @@
+<%- include ('../header.ejs') %>
+
+<div class="page-section">
+    <div class="container">
+       
+<form  class="main-form" action="/add_equipment" method="post">
+    <div class="row-mt-5">
+        <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+            <h1 >Add Equipment</h1>
+            <br>
+            
+    <input type="number"class="form-control" name="EquipmentID" placeholder="Equipment Id " required/>
+    </div>
+    
+    <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+    <input type="text" class="form-control"name="Title" placeholder="Title" required>
+    </div>
+    <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+    <input type="number"class="form-control" name="rent" placeholder="Rent" required>
+    </div>
+    <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+    <input type="text" class="form-control" name="location" placeholder="Location" required>
+    </div>
+    <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+    <input type="text"class="form-control" name="EquipmentImage" placeholder="Equipment Image">
+    </div>
+    <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+    <input type="text"class="form-control" name="description" placeholder="Description" >
+    </div>
+    <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+        <button  style="background-color:#00D9A5;border: none;"class="btn btn-primary mt-3 wow zoomIn" type="submit">Submit</button>
+    </div>
+
+    
+    
+</div>
+    
+</form>
+</div>
+</div>
+
+<%- include ('../footer.ejs') %>

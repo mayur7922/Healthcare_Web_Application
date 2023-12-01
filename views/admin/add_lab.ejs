@@ -1,0 +1,39 @@
+<%- include ('../header.ejs') %>
+<div class="page-section">
+    <div class="container" style="margin: auto;padding-top: 3rem;">
+
+        <form action="/add_lab" method="post">
+            <div class="form-group">
+                <label for="labId">Lab id:</label>
+                <input type="text" class="form-control" id="lId" placeholder="Enter lab id" name="labId" required>
+            </div>
+
+            <div class="form-group">
+                <label for="labName">Lab name:</label>
+                <input type="text" class="form-control" id="lname" placeholder="Enter lab name" name="labName" required>
+            </div>
+
+            <div class="form-group">
+                <label for="labLocation">Lab location:</label>
+                <input type="text" class="form-control" id="llocation" placeholder="Enter lab location"
+                    name="labLocation" required>
+            </div>
+
+            <div class="form-group">
+                <label for="labRatings">Lab ratings:</label>
+                <input type="text" class="form-control" id="lratings" placeholder="Enter lab ratings" name="labRatings" required>
+            </div>
+
+            <div class="form-group">
+                <label for="availableTime">Lab available Time:</label>
+                <input type="text" class="form-control" id="ltime" placeholder="Enter lab's available time"
+                    name="availableTime" required>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">submit to add</button>
+            </div>    
+        </form>
+    </div>
+</div>    
+
+<%- include ('../footer.ejs') %>

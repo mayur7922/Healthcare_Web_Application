@@ -1,0 +1,174 @@
+<%- include ('../header.ejs') %>
+
+<style> 
+  .table_wrapper{
+     display: block;
+     overflow-x: auto;
+     white-space: nowrap;
+ }
+
+ table td, table th {
+        padding: 200px;
+        text-align: center;
+    }
+ </style>
+
+
+<div class="jumbotron text-center">
+    <div class="container">
+      <i class="fas fa-key fa-6x"></i>
+      <h1 class="display-3">Booked Items</h1>
+    
+      
+        <%if(usersWithSecrets.charges.purpose == null){}else{%> 
+          <div class="table_wrapper">
+          <p class="secret-text">Purpose of payment: <%=usersWithSecrets.charges.purpose%></p>
+          <p class="secret-text">Total bill: <%=usersWithSecrets.charges.bill%></p>
+          </div>
+          <hr>
+        <%}  %>
+
+        <%if(usersWithSecrets.medicine.medicine_name == null){}else{%> 
+          <div class="table_wrapper">
+          <p class="secret-text">Medicine Name: <%=usersWithSecrets.medicine.medicine_name%></p>
+          <p class="secret-text">Medicine bill: <%=usersWithSecrets.medicine.medicine_bill%></p>
+          </div>
+          <hr>
+        <%}  %>  
+          
+
+          <%if(usersWithSecrets.insurence.insurence_company == null){}else{%> 
+            <div class="table_wrapper">
+            <p class="secret-text">Insurence company: <%=usersWithSecrets.insurence.insurence_company%></p>
+            <p class="secret-text">Health Issue: <%=usersWithSecrets.insurence.health_issue%></p>
+            <br>
+            </div>
+            <hr>
+          <%}  %>
+         
+
+          
+          <br>
+
+
+          <!-- <%= Eq = usersWithSecrets.booked_items.equipmentSchema1 %> -->
+          <%if(Eq == null){}else{%> 
+          <div class="container table_wrapper" style="margin: auto">
+            <table class="table bg-light ">
+              <thead>
+                <tr>
+                  <th>EquipmentId</th>
+                  <th>Title</th>
+                  <th>Rent</th>
+                  <th>Location</th>
+                  <th>EquipmentImage</th>
+                  <th>Description</th>
+                  <th>Select Equipment</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+          
+                  <td><%= Eq.EquipmentId %></td>
+                  <td><%= Eq.Title %></td>
+                  <td><%= Eq.Rent %></td>
+                  <td><%= Eq.Location %></td>
+                  <td><%= Eq.EquipmentImage %></td>
+                  <td><%= Eq.Description%></td>
+                  <td>
+                    <button class="btn btn-sm btn-primary" >Booked</button>
+                  </td>
+                
+              </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <br>
+          <hr>
+          <br>
+          <%}  %>
+
+          <!-- <%= lab = usersWithSecrets.booked_items.labSchema1 %> -->
+          <% if(lab == null){}else{ %> 
+          <div class="container table_wrapper" style="margin: auto">
+            <table class="table bg-light ">
+              <thead>
+                <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Location</th>
+                  <th>Rating</th>
+                  <th>Available time</th>
+                  <th>Book slot</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= lab.Id %></td>
+                  <td><%= lab.Name %></td>
+                  <td><%= lab.Location %></td>
+                  <td><%= lab.Rating %></td>
+                  <td><%= lab.Available_time %></td>
+                  <td>
+                    <button class="btn btn-sm btn-primary" >Booked</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <br>
+          <hr>
+          <br>
+          <%} %>
+        
+          <!-- <%= Nurse = usersWithSecrets.booked_items.nursesSchema1 %> -->
+          <% if(Nurse == null){}else{ %>
+          <div class="container table_wrapper" style="margin: auto">
+            <table class="table bg-light ">
+              <thead>
+                <tr>
+                  <th>NurseId</th>
+                  <th>Name</th>
+                  <th>contact</th>
+                  <th>Qualification</th>
+                  <th>Experience</th>
+                  <th>Rating</th>
+                  <th>Location</th>
+                  <th>Availability</th>
+                  <th>Charges</th>
+                  <th>Request</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><%= Nurse.NurseId %></td>
+                  <td><%= Nurse.Name %></td>
+                  <td><%= Nurse.contact %></td>
+                  <td><%= Nurse.Qualification %></td>
+                  <td><%= Nurse.Experience %></td>
+                  <td><%= Nurse.Rating %></td>
+                  <td><%= Nurse.Location %></td>
+                  <td><%= Nurse.Availability %></td>
+                  <td><%= Nurse.Charges %></td>
+                  <td>
+                    <button class="btn btn-sm btn-primary">Requested</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <br><br>
+          <% } %>
+          
+
+      
+      
+      
+      
+    </div>
+  </div>
+
+<%- include ('../footer.ejs') %>

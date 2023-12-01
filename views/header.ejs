@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <meta name="copyright" content="MACode ID, https://macodeid.com/">
+
+  <title>One Health - Medical Center HTML5 Template</title>
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.2.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.2.0/dist/js/bootstrap.bundle.min.js
+"></script>
+
+      <!-- font awesome icons -->
+      <script src="https://kit.fontawesome.com/3082d7844e.js" crossorigin="anonymous"></script>
+
+        <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;900&family=Ubuntu:wght@300;400&display=swap"
+    rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"
+    integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <link rel="stylesheet" href="assets\css\maicons.css">
+
+    <link rel="stylesheet" href="assets\css\owl.carousel.css">
+
+    <link rel="stylesheet" href="assets\css\animate.css">      <!-- css file for animation  -->   
+
+    <link rel="stylesheet" href="assets\css\theme.css">
+
+</head>
+<body>
+
+  <!-- Back to top button -->
+  <div class="back-to-top" style="background-color: #002b70"></div>
+
+    <header>
+    <nav class="navbar navbar-expand-lg navbar-light " id="nav-cc">
+      <div class="container">
+        <a class="navbar-brand" id="brand-name" href="#"><i class="fa-solid fa-notes-medical"></i> Medicare</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupport" aria-controls="navbarSupport" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupport">
+          <ul class="navbar-nav ml-auto ">
+            <li class="nav-item " onclick="opentab(event)">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item" onclick="opentab(event)">
+              <a class="nav-link" href="doctors">Doctors</a>
+            </li>
+            <li class="nav-item" onclick="opentab(event)">
+              <a class="nav-link" href="about">About Us</a>
+            </li>
+            <li class="nav-item" onclick="opentab(event)">
+              <a class="nav-link" href="contact">Contact</a>
+            </li>
+            <li class="nav-item" onclick="opentab(event)">
+              <a class="nav-link" href="/admin">Admin</a>
+            </li>
+            <% if(isUserLogged.status == false){ %>
+              <li class="nav-item">
+                <a class="btn btn-primary ml-lg-3 sp-btn" href="/login">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-primary ml-lg-3 sp-btn" href="/register">Sign Up</a>
+              </li>
+           <% } else { %>
+              <li class="nav-item">
+                <a class="nav-link active" href="/secrets"><%= isUserLogged.name %> <img class="profile-image" src="../assets/img/avatar.png" alt="avatar"> </a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-primary ml-lg-3 sp-btn" href="/logout">Logout</a>
+              </li>
+            <% } %>
+
+  
+            
+          </ul>
+        </div> <!-- .navbar-collapse -->
+      </div> <!-- .container -->
+    </nav>
+  </header>

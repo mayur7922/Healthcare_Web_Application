@@ -1,0 +1,54 @@
+<%- include ('../header.ejs') %>
+<style> 
+  .table_wrapper{
+     display: block;
+     overflow-x: auto;
+     white-space: nowrap;
+ }
+ h3 {
+  text-align: center;
+ }
+ </style>
+  
+  <br>
+    <h3>Available Nurses</h3>
+    <br>
+  <div class="container table_wrapper" style="margin: auto">
+    
+    <table class="table">
+      <thead>
+        <tr>
+          <th>NurseId</th>
+          <th>Name</th>
+          <th>contact</th>
+          <th>Qualification</th>
+          <th>Experience</th>
+          <th>Rating</th>
+          <th>Location</th>
+          <th>Availability</th>
+          <th>Charges</th>
+          <th>Request</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Nurses.forEach(function(Nurse){ %>
+        <tr>
+          <td><%= Nurse.NurseId %></td>
+          <td><%= Nurse.Name %></td>
+          <td><%= Nurse.contact %></td>
+          <td><%= Nurse.Qualification %></td>
+          <td><%= Nurse.Experience %></td>
+          <td><%= Nurse.Rating %></td>
+          <td><%= Nurse.Location %></td>
+          <td><%= Nurse.Availability %></td>
+          <td><%= Nurse.Charges %></td>
+          <td>
+            <form  action="/nurses" method="post" ><button class="btn btn-sm btn-primary" type="submit" name="NurseId" value="<%= Nurse.NurseId %>"><%= Nurse.Request %></button> </form>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+
+<%- include ('../footer.ejs') %>

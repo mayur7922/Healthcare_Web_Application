@@ -1,0 +1,30 @@
+<%- include ('../header.ejs') %>
+
+<div class="container mt-5">
+    <h1>Charges</h1>
+  
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="card">
+          <div class="card-body">
+  
+            <!-- Makes POST request to /register route -->
+            <form action="/charges" method="POST">
+              <div class="form-group">
+                <label for="purpose">Purpose of payment:</label>
+                <input type="text" id="purpose" class="form-control" name="purpose_of_payment">
+              </div>
+              <div class="form-group">
+                <label for="bill">Total bill:</label>
+                <input type="number" id="bill" class="form-control" name="total_bill">
+              </div>
+              <button type="submit" class="btn btn-dark">Pay</button>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<%- include ('../footer.ejs') %>

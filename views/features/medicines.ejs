@@ -1,0 +1,30 @@
+<%- include ('../header.ejs') %>
+
+
+<div class="container mt-5">
+    <h1>Medicines</h1>
+  
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="card">
+          <div class="card-body">
+  
+            <!-- Makes POST request to /register route -->
+            <form action="/medicines" method="POST">
+              <div class="form-group">
+                <label for="medicine_name">Medicine Name:</label>
+                <input type="text" id="medicine_name" class="form-control" name="medicine_name">
+              </div>
+              <div class="form-group">
+                <label for="medicine_bill">Medicine bill:</label>
+                <input type="number" id="medicine_bill" class="form-control" name="medicine_bill">
+              </div>
+              <button type="submit" class="btn btn-dark">Pay</button>
+            </form>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<%- include ('../footer.ejs') %>

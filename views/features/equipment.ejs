@@ -1,0 +1,51 @@
+<%- include ('../header.ejs') %>
+
+<style> 
+  .table_wrapper{
+     display: block;
+     overflow-x: auto;
+     white-space: nowrap;
+ }
+ h3 {
+  text-align: center;
+ }
+ </style>
+
+<br>
+<h3>Available Equipments</h3>
+<br>
+  <div class="container table_wrapper"  style="margin: auto">
+    
+    <table class="table ">
+      <thead>
+        <tr>
+          <th>EquipmentId</th>
+          <th>Title</th>
+          <th>Rent</th>
+          <th>Location</th>
+          <th>EquipmentImage</th>
+          <th>Description</th>
+          <th>Select Equipment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Equipments.forEach(function(Eq){ %>
+        <tr>
+          
+            <td><%= Eq.EquipmentId %></td>
+            <td><%= Eq.Title %></td>
+            <td><%= Eq.Rent %></td>
+            <td><%= Eq.Location %></td>
+            <td><%= Eq.EquipmentImage %></td>
+            <td><%= Eq.Description%></td>
+            <td>
+              <form  action="/equipment" method="post" ><button class="btn btn-sm btn-primary" type="submit" name="EquipmentId" value="<%= Eq.EquipmentId %>"><%= Eq.Select_Equipment %></button></form>
+            </td>
+          
+        </tr>
+        <% }) %>
+   
+      </tbody>
+    </table>
+  </div>
+<%- include ('../footer.ejs') %>

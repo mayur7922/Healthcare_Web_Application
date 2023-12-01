@@ -1,0 +1,58 @@
+<%- include ('../header.ejs') %>
+
+
+    <div class="page-section">
+        <div class="container">
+            <h1 class="text-center wow fadeInUp ">Add Nurse</h1>
+            <form class="main-form" action="/add_nurse" method="post">
+                <div class="row-mt-5">
+                    <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+                        <input type="number" class="form-control" name="id" placeholder="Enter id" required/>
+
+                    </div>
+
+                    <div class="col-12 col-sm-6 py-2 wow fadeInRight">
+                        <input type="text" class="form-control" name="name" placeholder="Enter name" required>
+                    </div>
+                    <br>
+                    <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+                        <input type="number" class="form-control" name="contact" placeholder="Enter contact" required>
+                    </div>
+                    <br>
+                    <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+                        <input type="text" class="form-control" name="qualification" placeholder="Enter qualification" required>
+                    </div>
+                    <br>
+                    <div class="col-12 col-sm-6 py-2 wow fadeInRight">
+                        <input type="text" class="form-control" name="experience" placeholder="Enter experience" required>
+                    </div>
+                    <br>
+                    <div class="col-12 col-sm-6 py-2 wow fadeInLeft">
+                        <input type="text" class="form-control" name="rating" placeholder="Enter rating" required>
+                    </div>
+                    <br>
+
+                    <div class="col-12 col-sm-6 py-2 wow fadeInUp">
+                        <input type="text" class="form-control" name="availabel" placeholder="Enter availability" required>
+                    </div>
+                    <br>
+                    <div class="col-12 col-sm-6 py-2 wow fadeInRight">
+                        <input type="text" class="form-control" name="location" placeholder="Enter location " required>
+                    </div>
+                    <div class="col-12 col-sm-6 py-2 wow fadeInRight">
+                        <input type="text" class="form-control" name="charges" placeholder="Enter charges " required>
+                    </div>
+
+                    <div class="col-12  py-2 wow fadeInRight">
+                        <button style="background-color:#00D9A5;border: none;" class="btn btn-primary   mt-3 wow zoomIn"
+                        type="submit">Submit</button>
+                    </div>
+
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+
+    <%- include ('../footer.ejs') %>

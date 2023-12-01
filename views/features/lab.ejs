@@ -1,0 +1,46 @@
+<%- include ('../header.ejs') %>
+
+<style> 
+  .table_wrapper{
+     display: block;
+     overflow-x: auto;
+     white-space: nowrap;
+ }
+ h3 {
+  text-align: center;
+ }
+ </style>
+  
+    <br>
+    <h3>Available Labs</h3>
+    <br>
+  <div class="container table_wrapper" style="margin: auto">
+    
+    <table class="table ">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>Rating</th>
+          <th>Available time</th>
+          <th>Book slot</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% Labs.forEach(function(lab){ %>
+        <tr>
+          <td><%= lab.Id %></td>
+          <td><%= lab.Name %></td>
+          <td><%= lab.Location %></td>
+          <td><%= lab.Rating %></td>
+          <td><%= lab.Available_time %></td>
+          <td>
+            <form  action="/lab" method="post" ><button class="btn btn-sm btn-primary" type="submit" name="LabId" value="<%= lab.Id %>"><%= lab.Book_slot %></button></form>
+          </td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+<%- include ('../footer.ejs') %>
